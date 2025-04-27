@@ -33,24 +33,61 @@ int main(){
 
 
     //MOVIMENTO DA TORRE
-
+    printf("\tTORRE\n");
     for (int i = 0; i < torre; i++)
     {
         printf("Frente\n");
     }
     
     //MOVIMENTO DA RAINHA
-
+    printf("\tRAINHA\n");
     for (int i = 0; i < rainha; i++)
     {
         printf("Esquerda\n");
     }
     
     //MOVIMENTO DO BISPO
-
+    printf("\tBISPO\n");
     for (int i = 0; i < bispo; i++)
     {
         printf("Dgnl D\n");
     }
     
+    //MOVIMENTO DO CAVALO
+    printf("\tCAVALO\n");
+    int MovCavaloH, MovCavaloV;
+    //p onde o cavalo vai
+    printf("Cavalo sobe ou desce?\n1-SOBE,\n2-DESCE\n");
+    scanf("%i",&MovCavaloV);
+    printf("Cavalo direita ou esquerda?\n1-DIREITA,\n2-ESQUERDA\n");
+    scanf("%i",&MovCavaloH);
+
+    switch (MovCavaloV)//começa o mov do cavalo
+    {
+    case 1:
+        for (int mov = 0; mov < 1; mov++){
+            for (int sobe = 0; sobe < 2; sobe++)
+            {
+                printf("CIMA\n");
+            }
+            MovCavaloH == 1? printf("DIREITA\n"): printf("ESQUERDA\n");
+        }
+        
+        break;
+    case 2:
+    for (int mov = 0; mov < 1; mov++){
+        for (int desce = 0; desce < 2; desce++)
+        {
+            printf("BAIXO\n");
+        }
+        MovCavaloH == 1? printf("DIREITA\n"): printf("ESQUERDA\n");
+    }
+        break;
+    
+    default:
+            printf("Movimento inválido\n");
+        break;
+    }// fim do movimento do cavalo
+
+
 }
