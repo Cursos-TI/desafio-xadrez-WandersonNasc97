@@ -1,20 +1,33 @@
 #include <stdio.h>
+//ala dos recursivos
+void bispo_mov(int mov){
+    for (int v=1, h=0; mov > 0; mov--, v++){
+        printf("Cima ");
+        while (h < v )
+        {
+            printf("Direita\n");
+            h++;
+        }
+    }
+}
+
+void torre_mov(int mov){
+    if (mov > 0){
+        printf("Frente\n");
+        torre_mov(mov-1);
+    }
+}
+
+void rainha_mov(int mov){
+    if (mov > 0){
+        printf("Esquerda\n");
+        rainha_mov(mov-1);
+    }
+}
+
 
 int main(){
-    /*
-    CONDIÇÕES
-    - PEÇAS: torre, bispo e rainha;
-    - torre anda hor e verticalmente
-    - bispo anda só nas diagonais
-    - rainha anda tds os lados
-
-    - bispo 5casas D
-    - rainha 5c E
-    - torre 5c F
-
-    - simular mov usando printf    
-    
-    */
+  
    //DECLARAÇÃO DAS VARIAVEIS
     int torre, bispo, rainha;
 
@@ -34,24 +47,15 @@ int main(){
 
     //MOVIMENTO DA TORRE
     printf("\tTORRE\n");
-    for (int i = 0; i < torre; i++)
-    {
-        printf("Frente\n");
-    }
+    torre_mov(torre);
     
     //MOVIMENTO DA RAINHA
     printf("\tRAINHA\n");
-    for (int i = 0; i < rainha; i++)
-    {
-        printf("Esquerda\n");
-    }
+    rainha_mov(rainha);
     
     //MOVIMENTO DO BISPO
     printf("\tBISPO\n");
-    for (int i = 0; i < bispo; i++)
-    {
-        printf("Dgnl D\n");
-    }
+    bispo_mov(bispo);
     
     //MOVIMENTO DO CAVALO
     printf("\tCAVALO\n");
@@ -66,8 +70,10 @@ int main(){
     {
     case 1:
         for (int mov = 0; mov < 1; mov++){
-            for (int sobe = 0; sobe < 2; sobe++)
+            for (int sobe = 0; sobe < 3; sobe++)
             {
+                
+                if (sobe == 2) break;
                 printf("CIMA\n");
             }
             MovCavaloH == 1? printf("DIREITA\n"): printf("ESQUERDA\n");
